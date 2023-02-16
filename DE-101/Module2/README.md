@@ -8,4 +8,15 @@
 ```
 CREATE DATABASE postgres;
 ```
-5. Create tables orders, people and returns from the scripts.
+5. Create tables orders, people and returns in the database.
+- [orders.sql](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/orders.sql)
+- [people.sql](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/people.sql)
+- [returns.sql](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/returns.sql)
+6. Copy [datasets](https://github.com/souluran/datalearn101/tree/master/DE-101/Module2/data) to you local machine.
+7. Import datasets to the tables using the following commands:
+```
+copy orders from 'your_path_to_file/orders.txt' with delimiter '|' header;
+copy people from 'your_path_to_file/people.txt' with delimiter '|' header;
+copy returns from 'your_path_to_file/returns.txt' with delimiter '|' header;
+```
+8. 
