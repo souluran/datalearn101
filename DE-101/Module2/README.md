@@ -40,7 +40,7 @@ This [SQL script](https://github.com/souluran/datalearn101/blob/master/DE-101/Mo
 - Percent returns to orders
 
 ## Staging schema setup
-1. Use the script [stg_schema.sql] to create schema 'stg' and table 'orders' in the schema.
+1. Use the script [stg_schema.sql](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/stg_schema.sql) to create schema 'stg' and table 'orders' in the schema.
 2. Then import data from [orders.txt](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/data/orders.txt) into table stg.orders.
 ```
 copy stg.orders from 'your_path_to_file/orders.txt' with delimiter '|' header;
@@ -48,6 +48,18 @@ copy stg.orders from 'your_path_to_file/orders.txt' with delimiter '|' header;
 
 ## Data Mart modeling
 Desinged conceptual, logical and physical models of the Data Mart in [SQLDMB](https://sqldbm.com/Home/) web application.
-The conceptual model is very simple and it consists of 5 entities.
+
+1. Conceptual model is very simple and it consists of 5 entities.
+![cover](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/image/Conceptual%20model.JPG)
+
+2. Logical model shows the entities including attributes.
+![cover](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/image/Logical%20model.JPG)
+
+3. Physical model shows the tables and their relationships on database level with describing all columns, data types, PK and FK keys etc. 
+Based on this model will be created DDL code for creating tables in the schema.
+![cover](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/image/Physical%20model.JPG)
+
+In the SQLDBM using Forward engineer generating DDL code for each tables on the schema.
+
 
 
