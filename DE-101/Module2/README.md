@@ -61,4 +61,30 @@ Based on this model will be created DDL code for creating tables in the schema.
 
 ## Data Mart setup
 1. In the SQLDBM application using Forward engineer generating DDL code for each tables on the schema. All DDL commands were stored in the single script [datamart_setup.sql](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/datamart_setup.sql). 
-2. Then running the script in your Postgres database.
+2. Now running the script in your Postgres database.
+3. Then insert data into datamart tables. For this you need to use and run the script [datamart_inserting.sql](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/datamart_inserting.sql)
+4. Datamart is setup. Let's execute some query to check that's all OK.
+```
+select 
+dc.customer_name ,
+dp.product_name ,
+dp.category ,
+dg.country ,
+ds.shipping_mode ,
+s.quantity ,
+s.sales as quarter_sales 
+from dw.fc_sales s
+inner join dw.dm_customer dc 
+on s.cust_id = dc.cust_id 
+inner join dw.dm_product dp 
+on s.prod_id = dp.prod_id 
+inner join dw.dm_geo dg 
+on s.geo_id = dg.geo_id 
+inner join dw.dm_shipping ds 
+on s.ship_id = ds.ship_id 
+inner join dw.dm_calendar dt 
+on s.order_date_id = dt.dateid
+	and dt.year = 2019
+	and dt.quarter = 4
+;
+```
