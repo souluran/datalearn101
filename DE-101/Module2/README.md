@@ -49,7 +49,7 @@ copy stg.orders from 'your_path_to_file/orders.txt' with delimiter '|' header;
 ## Data Mart modeling
 Desinged conceptual, logical and physical models of the Data Mart in [SQLDMB](https://sqldbm.com/Home/) web application.
 
-1. Conceptual model is very simple and it consists of six entities.
+1. Conceptual model is very simple and it consists of six entities. It designed in Star schema (by Kimball model).
 ![cover](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/image/Conceptual%20model.JPG)
 
 2. Logical model shows the entities including attributes.
@@ -59,7 +59,6 @@ Desinged conceptual, logical and physical models of the Data Mart in [SQLDMB](ht
 Based on this model will be created DDL code for creating tables in the schema.
 ![cover](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/image/Physical%20model.JPG)
 
-In the SQLDBM using Forward engineer generating DDL code for each tables on the schema.
-
-
-
+## Data Mart setup
+1. In the SQLDBM application using Forward engineer generating DDL code for each tables on the schema. All DDL commands were stored in the single script [datamart_setup.sql](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/datamart_setup.sql). 
+2. Then running the script in your Postgres database.
