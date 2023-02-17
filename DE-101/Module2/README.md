@@ -72,7 +72,7 @@ dp.category ,
 dg.country ,
 ds.shipping_mode ,
 s.quantity ,
-s.sales as quarter_sales 
+s.sales 
 from dw.fc_sales s
 inner join dw.dm_customer dc 
 on s.cust_id = dc.cust_id 
@@ -84,7 +84,7 @@ inner join dw.dm_shipping ds
 on s.ship_id = ds.ship_id 
 inner join dw.dm_calendar dt 
 on s.order_date_id = dt.dateid
-	and dt.year = 2019
-	and dt.quarter = 4
+  and dt.year = 2019
+  and dt.quarter = 4
 ;
 ```
