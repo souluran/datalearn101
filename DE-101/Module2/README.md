@@ -49,7 +49,7 @@ copy stg.orders from 'your_path_to_file/orders.txt' with delimiter '|' header;
 ## Data Mart modeling
 Desinged conceptual, logical and physical models of the Data Mart in [SQLDMB](https://sqldbm.com/Home/) web application.
 
-1. Conceptual model is very simple and it consists of 5 entities.
+1. Conceptual model is very simple and it consists of six entities.
 ![cover](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/image/Conceptual%20model.JPG)
 
 2. Logical model shows the entities including attributes.
