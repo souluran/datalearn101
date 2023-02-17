@@ -2,13 +2,15 @@
 CREATE extension tablefunc;
 
 
---Total Sales, Total Profit, Profit Ratio, Avg. Discount
+--Number of Orders, Total Sales, Total Profit, Profit Ratio, Avg. Discount
 select 
-sum(sales) as sales,
-sum(profit) as profit,
+count(distinct order_id) as number_orders,
+sum(sales) as total_sales,
+sum(profit) as total_profit,
 round((sum(profit)/sum(sales))*100) as profit_ratio,
 avg(discount) as avg_discount
-from orders;
+from orders
+where not exists(select 1 from returns where order_id = o.order_id);
 
 
 --Profit per Order
@@ -76,22 +78,6 @@ group by region
 order by 1;
 
 
---Customer Ranking
-with customers as (
-select
-customer_name,
-sum(sales) as sales
-from orders
-group by customer_name
-)
-select
-customer_name,
-sales,
-rank() over(order by sales desc) as sales_rank
-from customers
-;
-
-
 --percent to total sales by regions
 with regions as (
 select
@@ -106,7 +92,18 @@ from regions
 order by 1;
 
 
---returns
+-- Number of Returns, Total amount
+select
+r.returned,
+count(distinct o.order_id) as number_returned,
+sum(sales) as total_amount
+from orders o 
+inner join (select distinct order_id, returned from returns) r 
+on r.order_id = o.order_id 
+group by r.returned;
+
+
+--percent returns to orders
 with rets as (
 select
 r.returned,
