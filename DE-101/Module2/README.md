@@ -40,7 +40,7 @@ This [SQL script](https://github.com/souluran/datalearn101/blob/master/DE-101/Mo
 - Percent returns to orders
 
 ## Staging schema setup
-1. Use the script [stg_schema.sql](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/staging_setup.sql) to create schema 'stg' and table 'orders' in the schema.
+1. Use the script [staging_setup.sql](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/staging_setup.sql) to create schema 'stg' and table 'orders' in the schema.
 2. Then import data from [orders.txt](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/data/orders.txt) into table stg.orders.
 ```
 copy stg.orders from 'your_path_to_file/orders.txt' with delimiter '|' header;
