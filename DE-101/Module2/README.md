@@ -1,12 +1,12 @@
 # Module 2 - Database and SQL
 Content:
-1. [PostgreSQL Database setup](https://github.com/souluran/datalearn101/edit/master/DE-101/Module2/README.md#1-postgresql-database-setup)
-2. [Create tables and importing data](https://github.com/souluran/datalearn101/edit/master/DE-101/Module2/README.md#2-create-tables-and-importing-data)
-3. [Analyzing superstore dataset using SQL-queries](https://github.com/souluran/datalearn101/edit/master/DE-101/Module2/README.md#3-analyzing-superstore-dataset-using-sql-queries)
-4. [Staging schema setup](https://github.com/souluran/datalearn101/edit/master/DE-101/Module2/README.md#4-staging-schema-setup)
-5. [Data Mart modeling](https://github.com/souluran/datalearn101/edit/master/DE-101/Module2/README.md#5-data-mart-modeling)
-6. [Data Mart setup](https://github.com/souluran/datalearn101/edit/master/DE-101/Module2/README.md#6-data-mart-setup)
-7. [AWS RDS Postgres Database setup](https://github.com/souluran/datalearn101/edit/master/DE-101/Module2/README.md#7-aws-rds-postgres-database-setup)
+1. [PostgreSQL Database setup](https://github.com/souluran/datalearn101/tree/master/DE-101/Module2#1-postgresql-database-setup)
+2. [Create tables and importing data](https://github.com/souluran/datalearn101/tree/master/DE-101/Module2#2-create-tables-and-importing-data)
+3. [Analyzing superstore dataset using SQL-queries](https://github.com/souluran/datalearn101/tree/master/DE-101/Module2#3-analyzing-superstore-dataset-using-sql-queries)
+4. [Staging schema setup](https://github.com/souluran/datalearn101/tree/master/DE-101/Module2#4-staging-schema-setup)
+5. [Data Mart modeling](https://github.com/souluran/datalearn101/tree/master/DE-101/Module2#5-data-mart-modeling)
+6. [Data Mart setup](https://github.com/souluran/datalearn101/tree/master/DE-101/Module2#6-data-mart-setup)
+7. [AWS RDS Postgres Database setup](https://github.com/souluran/datalearn101/tree/master/DE-101/Module2#7-aws-rds-postgres-database-setup)
 
 
 ## 1. PostgreSQL Database setup
