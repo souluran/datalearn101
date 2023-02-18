@@ -88,3 +88,36 @@ on s.order_date_id = dt.dateid
   and dt.quarter = 4
 ;
 ```
+
+## AWS RDS Postgres setup
+1. Create [AWS Free Tire account](https://aws.amazon.com/free/?nc1=h_ls).
+2. After you create AWS account, you will login into [AWS management console](https://console.aws.amazon.com/console/home).
+3. Then in the Search type RDS and click on it.
+  Read and use this guide [how to create RDS Postgres](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_GettingStarted.CreatingConnecting.PostgreSQL.html).
+4. In the RDS page you can find many different things, but you need click Create Database.
+5. For this module we will create Postgres DB instance, so choose it (Postgres version you choose on your own).
+  - set Template as Free Tier. 
+  - disable Monitoring and Backup options, because they are charged.
+  - allow Public Access to connect to DB instance through your local, otherwise, you will need to configure Bastion EC2 Instance for using SSH tunnel [rds-connection-using-bastion](https://aws.amazon.com/premiumsupport/knowledge-center/rds-connect-using-bastion-host-linux/).
+  - other settings can be left by default.
+9. Once DB instance is created, let's connect to it, for example using DBeaver tool. 
+  Note, you might need to download and install [Postgres JDBC driver](https://jdbc.postgresql.org/download/).
+  Also, here you can read more about [connection to RDS Postgres](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ConnectToPostgreSQLInstance.html).
+10. Now, the time to creta [staging table](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/staging_setup.sql). Note, 'copy' command cannot supported for AWS RDS Postgres from DBeaver.
+  But you run it in pslq command line like below. Note, you must delete a header line from [orders.txt](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/data/orders.txt).
+```
+psql ^
+   --host=<AWS DB instance endpoint> ^
+   --port=<port> ^
+   --username=<master username> ^
+   --password ^
+   --dbname=<database name> 
+   --command="copy stg.orders from 'your_path_to_file/orders.txt' with delimiter '|';"
+```
+11. Next, we create datamart schema and tables using the script [datamart_setup](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/datamart_setup.sql).
+12. Inserting datmart table using the script [datamart_inserting](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/datamart_inserting.sql).
+13. Just run a simple query to check fc_orders table.
+```
+select * from dw.fc_sales limit 100;
+```
+14. Done. (Save your money! Don't forget to stop or terminate AWS DB Instance if you are not planning to use it further).
