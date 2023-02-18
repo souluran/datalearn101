@@ -3,9 +3,9 @@ Content:
 1. [PostgreSQL Database setup](https://github.com/souluran/datalearn101/tree/master/DE-101/Module2#1-postgresql-database-setup)
 2. [Create tables and importing data](https://github.com/souluran/datalearn101/tree/master/DE-101/Module2#2-create-tables-and-importing-data)
 3. [Analyzing superstore dataset using SQL-queries](https://github.com/souluran/datalearn101/tree/master/DE-101/Module2#3-analyzing-superstore-dataset-using-sql-queries)
-4. [Staging schema setup](https://github.com/souluran/datalearn101/tree/master/DE-101/Module2#4-staging-schema-setup)
-5. [Data Mart modeling](https://github.com/souluran/datalearn101/tree/master/DE-101/Module2#5-data-mart-modeling)
-6. [Data Mart setup](https://github.com/souluran/datalearn101/tree/master/DE-101/Module2#6-data-mart-setup)
+4. [Staging area setup](https://github.com/souluran/datalearn101/tree/master/DE-101/Module2#4-staging-area-setup)
+5. [Modeling DWH using SQLDBM](https://github.com/souluran/datalearn101/tree/master/DE-101/Module2#5-modeling-dwh-using-sqldbm)
+6. [DWH setup](https://github.com/souluran/datalearn101/tree/master/DE-101/Module2#6-dwh-setup)
 7. [AWS RDS Postgres Database setup](https://github.com/souluran/datalearn101/tree/master/DE-101/Module2#7-aws-rds-postgres-database-setup)
 
 
@@ -48,15 +48,15 @@ This [SQL script](https://github.com/souluran/datalearn101/blob/master/DE-101/Mo
 - Number of Returns, Total amount
 - Percent returns to orders
 
-## 4. Staging schema setup
+## 4. Staging area setup
 1. Use the script [staging_setup.sql](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/staging_setup.sql) to create schema 'stg' and table 'orders' in the schema.
 2. Then import data from [orders.txt](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/data/orders.txt) into table stg.orders.
 ```
 copy stg.orders from 'your_path_to_file/orders.txt' with delimiter '|' header;
 ```
 
-## 5. Data Mart modeling
-Desinged conceptual, logical and physical models of the Data Mart in [SQLDMB](https://sqldbm.com/Home/) web application.
+## 5. Modeling DWH using SQLDBM
+Desinged conceptual, logical and physical models of DWH [SQLDBM](https://sqldbm.com/Home/) web application.
 
 1. Conceptual model is very simple and it consists of six entities. It designed in Star schema (by Kimball model).
 ![cover](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/image/Conceptual%20model.JPG)
@@ -68,7 +68,7 @@ Desinged conceptual, logical and physical models of the Data Mart in [SQLDMB](ht
 Based on this model will be created DDL code for creating tables in the schema.
 ![cover](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/image/Physical%20model.JPG)
 
-## 6. Data Mart setup
+## 6. DWH setup
 1. In the SQLDBM application using Forward engineer generating DDL code for each tables on the schema. All DDL commands were stored in the single script [datamart_setup.sql](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/datamart_setup.sql). 
 2. Now running the script in your Postgres database.
 3. Then insert data into datamart tables. For this you need to use and run the script [datamart_inserting.sql](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/datamart_inserting.sql)
