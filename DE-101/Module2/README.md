@@ -6,7 +6,7 @@ Content:
 4. [Staging area setup](https://github.com/souluran/datalearn101/tree/master/DE-101/Module2#4-staging-area-setup)
 5. [Modeling DWH using SQLDBM](https://github.com/souluran/datalearn101/tree/master/DE-101/Module2#5-modeling-dwh-using-sqldbm)
 6. [DWH setup](https://github.com/souluran/datalearn101/tree/master/DE-101/Module2#6-dwh-setup)
-7. [PostgreSQL on Amazon RDS setup](https://github.com/souluran/datalearn101/tree/master/DE-101/Module2#7-postgresql-db-on-amazon-rds-setup)
+7. [PostgreSQL on Amazon RDS setup](https://github.com/souluran/datalearn101/tree/master/DE-101/Module2#7-postgresql-on-amazon-rds-setup)
 
 
 ## 1. PostgreSQL Database setup
