@@ -21,8 +21,8 @@ CREATE TABLE stg.orders(
   Category      VARCHAR(15) NOT NULL,
   SubCategory   VARCHAR(11) NOT NULL,
   Product_Name  VARCHAR(127) NOT NULL,
-  Sales         NUMERIC(94) NOT NULL,
+  Sales         NUMERIC(9,4) NOT NULL,
   Quantity      INTEGER  NOT NULL,
-  Discount      NUMERIC(42) NOT NULL,
-  Profit        NUMERIC(2116) NOT NULL
+  Discount      NUMERIC(4,2) NOT NULL,
+  Profit        NUMERIC(21,16) NOT NULL
 );
