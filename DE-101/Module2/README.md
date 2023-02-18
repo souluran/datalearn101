@@ -98,7 +98,7 @@ on s.order_date_id = dt.dateid
 ;
 ```
 
-## 7. Postgres DB on Amazon RDS
+## 7. PostgreSQL on Amazon RDS setup
 1. Create [AWS Free Tire account](https://aws.amazon.com/free/?nc1=h_ls).
 2. After you create AWS account, you will login into [AWS management console](https://console.aws.amazon.com/console/home).
 3. Then in the Search type RDS and click on it.
