@@ -65,14 +65,13 @@ Desinged conceptual, logical and physical models of DWH [SQLDBM](https://sqldbm.
 ![cover](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/image/Logical%20model.JPG)
 
 3. Physical model shows the tables and their relationships on database level with describing all columns, data types, PK and FK keys etc. 
-Based on this model will be created DDL code for creating tables in the schema.
 ![cover](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/image/Physical%20model.JPG)
 
 ## 6. DWH setup
-1. In the SQLDBM application using Forward engineer generating DDL code for each tables on the schema. All DDL commands were stored in the single script [datamart_setup.sql](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/datamart_setup.sql). 
+1. In the SQLDBM application using Forward engineer, generate DDL scripts for each table on the diagram. All DDL code is already stored in the single script [datamart_setup.sql](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/datamart_setup.sql). 
 2. Now running the script in your Postgres database.
-3. Then insert data into datamart tables. For this you need to use and run the script [datamart_inserting.sql](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/datamart_inserting.sql)
-4. Datamart is setup. Let's execute some query to check that's all OK.
+3. Then insert data into DWH tables. Just use and run the script [datamart_inserting.sql](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/datamart_inserting.sql).
+4. Datamart is setup. Let's execute a query to check that's all OK.
 ```
 select 
 dc.customer_name ,
