@@ -1,7 +1,7 @@
 /* Script for inserting data into data mart tables based on the data from staging */
 
 --delete rows
-truncate table dw.dm_customer;
+truncate table dw.dm_customer cascade;
 
 --populate customer dimension
 insert into dw.dm_customer 
@@ -14,7 +14,7 @@ from (select distinct customer_id, customer_name from stg.orders) o;
 
 
 --delete rows
-truncate table dw.dm_shipping;
+truncate table dw.dm_shipping cascade;
 
 --populate shipping dimension
 insert into dw.dm_shipping 
@@ -26,7 +26,7 @@ from (select distinct ship_mode from stg.orders ) o;
 
 
 --delete rows
-truncate table dw.dm_product;
+truncate table dw.dm_product cascade;
 
 --populate product dimension
 insert into dw.dm_product 
@@ -42,7 +42,7 @@ from (select distinct product_id, product_name, category, subcategory, segment
 
 
 --delete rows
-truncate table dw.dm_geo;
+truncate table dw.dm_geo cascade;
 
 --generating geo_id and insert rows from orders
 insert into dw.dm_geo 
@@ -66,7 +66,7 @@ where city = 'Burlington' and postal_code is null;
 
 
 --delete rows
-truncate table dw.dm_calendar;
+truncate table dw.dm_calendar cascade;
 
 --generating and inserting calendar dimension
 insert into dw.dm_calendar 
@@ -90,7 +90,7 @@ to_char(date,'yyyymmdd')::int as date_id,
 
 
 --delete rows
-truncate table dw.fc_sales;
+truncate table dw.fc_sales cascade;
 
 --insert data into fact table fc_sales by querying from staging table and dimension tables
 insert into dw.fc_sales
