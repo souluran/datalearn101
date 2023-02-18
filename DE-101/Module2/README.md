@@ -1,6 +1,15 @@
 # Module 2 - Database and SQL
+Content:
+1. [PostgreSQL Database setup](https://github.com/souluran/datalearn101/edit/master/DE-101/Module2/README.md#1-postgresql-database-setup)
+2. [Create tables and importing data](https://github.com/souluran/datalearn101/edit/master/DE-101/Module2/README.md#2-create-tables-and-importing-data)
+3. [Analyzing superstore dataset using SQL-queries](https://github.com/souluran/datalearn101/edit/master/DE-101/Module2/README.md#3-analyzing-superstore-dataset-using-sql-queries)
+4. [Staging schema setup](https://github.com/souluran/datalearn101/edit/master/DE-101/Module2/README.md#4-staging-schema-setup)
+5. [Data Mart modeling](https://github.com/souluran/datalearn101/edit/master/DE-101/Module2/README.md#5-data-mart-modeling)
+6. [Data Mart setup](https://github.com/souluran/datalearn101/edit/master/DE-101/Module2/README.md#6-data-mart-setup)
+7. [AWS RDS Postgres Database setup](https://github.com/souluran/datalearn101/edit/master/DE-101/Module2/README.md#7-aws-rds-postgres-database-setup)
 
-## PostgreSQL Database setup
+
+## 1. PostgreSQL Database setup
 1. Download [PostgreSQL](https://www.postgresql.org/download/) and install on your machine.
 2. Download and install [DBeaver](https://dbeaver.io/download/) client tool for connecting to PostgreSQL and performing any commands.
 3. Create and establish a connection to Postgres in DBeaver.
@@ -9,7 +18,7 @@
 CREATE DATABASE postgres;
 ```
 
-## Create tables and upload superstore
+## 2. Create tables and importing data
 1. Create tables orders, people and returns in the database.
 - [orders.sql](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/orders.sql)
 - [people.sql](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/people.sql)
@@ -22,7 +31,7 @@ copy people from 'your_path_to_file/people.txt' with delimiter '|' header;
 copy returns from 'your_path_to_file/returns.txt' with delimiter '|' header;
 ```
 
-## Write SQL for analyzing the superstore data
+## 3. Analyzing superstore dataset using SQL-queries
 This [SQL script](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/superstore_queries.sql) includes some metrics and insigths about orders, returns, sales, profit, products and customer.
 - Total Sales
 - Total Profit
@@ -39,14 +48,14 @@ This [SQL script](https://github.com/souluran/datalearn101/blob/master/DE-101/Mo
 - Number of Returns, Total amount
 - Percent returns to orders
 
-## Staging schema setup
+## 4. Staging schema setup
 1. Use the script [staging_setup.sql](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/staging_setup.sql) to create schema 'stg' and table 'orders' in the schema.
 2. Then import data from [orders.txt](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/data/orders.txt) into table stg.orders.
 ```
 copy stg.orders from 'your_path_to_file/orders.txt' with delimiter '|' header;
 ```
 
-## Data Mart modeling
+## 5. Data Mart modeling
 Desinged conceptual, logical and physical models of the Data Mart in [SQLDMB](https://sqldbm.com/Home/) web application.
 
 1. Conceptual model is very simple and it consists of six entities. It designed in Star schema (by Kimball model).
@@ -59,7 +68,7 @@ Desinged conceptual, logical and physical models of the Data Mart in [SQLDMB](ht
 Based on this model will be created DDL code for creating tables in the schema.
 ![cover](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/image/Physical%20model.JPG)
 
-## Data Mart setup
+## 6. Data Mart setup
 1. In the SQLDBM application using Forward engineer generating DDL code for each tables on the schema. All DDL commands were stored in the single script [datamart_setup.sql](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/datamart_setup.sql). 
 2. Now running the script in your Postgres database.
 3. Then insert data into datamart tables. For this you need to use and run the script [datamart_inserting.sql](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/datamart_inserting.sql)
@@ -89,7 +98,7 @@ on s.order_date_id = dt.dateid
 ;
 ```
 
-## AWS RDS Postgres setup
+## 7. AWS RDS Postgres Database setup
 1. Create [AWS Free Tire account](https://aws.amazon.com/free/?nc1=h_ls).
 2. After you create AWS account, you will login into [AWS management console](https://console.aws.amazon.com/console/home).
 3. Then in the Search type RDS and click on it.
