@@ -6,7 +6,7 @@ Content:
 4. [Staging area setup](https://github.com/souluran/datalearn101/tree/master/DE-101/Module2#4-staging-area-setup)
 5. [Modeling DWH using SQLDBM](https://github.com/souluran/datalearn101/tree/master/DE-101/Module2#5-modeling-dwh-using-sqldbm)
 6. [DWH setup](https://github.com/souluran/datalearn101/tree/master/DE-101/Module2#6-dwh-setup)
-7. [AWS RDS Postgres Database setup](https://github.com/souluran/datalearn101/tree/master/DE-101/Module2#7-aws-rds-postgres-database-setup)
+7. [PostgreSQL on Amazon RDS setup](https://github.com/souluran/datalearn101/tree/master/DE-101/Module2#7-postgresql-db-on-amazon-rds-setup)
 
 
 ## 1. PostgreSQL Database setup
@@ -98,7 +98,7 @@ on s.order_date_id = dt.dateid
 ;
 ```
 
-## 7. AWS RDS Postgres Database setup
+## 7. Postgres DB on Amazon RDS
 1. Create [AWS Free Tire account](https://aws.amazon.com/free/?nc1=h_ls).
 2. After you create AWS account, you will login into [AWS management console](https://console.aws.amazon.com/console/home).
 3. Then in the Search type RDS and click on it.
