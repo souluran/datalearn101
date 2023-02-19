@@ -119,7 +119,7 @@ psql ^
    --port=<port> ^
    --username=<master username> ^
    --password ^
-   --dbname=<database name> 
+   --dbname=<database name> ^
    --command="copy stg.orders from 'your_path_to_file/orders.txt' with delimiter '|';"
 ```
 11. Next, we create datamart schema and tables using the script [datamart_setup](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/datamart_setup.sql).
