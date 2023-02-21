@@ -1,5 +1,6 @@
 # Module 2 - Database and SQL
 Tasks are done in accordance with [DataLearn DE-101 Module02](https://github.com/Data-Learn/data-engineering/tree/master/DE-101%20Modules/Module02)
+> PostgreSQL / DBeaver / Amazon RDS / SQLDBM / Google Looker / Amazon QuickSight
 
 Content:
 1. [PostgreSQL Database setup](https://github.com/souluran/datalearn101/tree/master/DE-101/Module2#1-postgresql-database-setup)
