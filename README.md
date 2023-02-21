@@ -1,2 +1,2 @@
 # datalearn101
-Project for learning and practicing in Data Engineering and Data Analytics
+Getting Started with Analytics (Data) Engineering - [DE-101 course](https://datalearn.ru/)
