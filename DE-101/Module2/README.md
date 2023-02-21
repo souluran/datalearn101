@@ -131,8 +131,10 @@ select * from dw.fc_sales limit 100;
 14. Done. (Save your money! Don't forget to stop or terminate AWS DB Instance if you are not planning to use it further).
 
 ## 8. Superstore Dashboard in Google Looker
-My first experience in Goolge Looker, and I've managed to design my first dashboard here. Despite the tool being intuitively clear and easy to work with, I'd like  to highlight some interesting points:
+My first experience in [Goolge Looker](https://lookerstudio.google.com), and I've managed to design my first dashboard here. Despite the tool being intuitively clear and easy to work with, I'd like to highlight some interesting points:
 - Looker works on a cloud only.
+- As Looker is Google service you log into it with your google account.
+- You can easy to share Dashboards with other user who have google account (most people have).
 - Looker supports the PostgreSQL version prior v12 only.
 - Diagrams and control elemnts don't have an editable Header name, it should be added separately like a text label.
 - Control element can be applied on the page level or report level only. No way to assign it to a single chart or another object.
@@ -146,3 +148,18 @@ My example of dashboard designed in Looker.
 ![cover](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/image/looker/looke-dashboard-page3.JPG)
 
 ## 9. Superstore Dashboard in Amazon QuickSight
+[Amazon QuickSight](https://aws.amazon.com/quicksight/) is one of Cloud services provided by Amazon. I have experience in some of AWS services, but QuickSight is new for me. Working with it some time I found that QuickSight is simpler and more convenient for designing dashboards than Looker. But also I noticed some points related this BI tool:
+- QuickSight works on a cloud only as Looker.
+- You need to have AWS Account.
+- In Standard Free tier, you cannot share Dashboards to external users out of AWS. Instead, you need share to IAM users.
+- Charts is not interactive, means, no cross-filtering when you click on element in the chart.
+- You can add fiters (like control elements in Looker) and assigned it for individual object or all on the report sheet.
+- Also you can add filters to report level.
+- All objects are editible and customizing (including Header Name).
+- No flexibility to resize and moving objects by layout, there is a rigid binding to the grid. 
+- Objects cannot be covered and crossed one another as it works in Looker.
+
+My example of dashboard designed in QuickSight.
+![cover](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/image/quicksight/quicksight-dashboard-page1.JPG)
+![cover](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/image/quicksight/quicksight-dashboard-page2.JPG)
+![cover](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/image/quicksight/quicksight-dashboard-page3.JPG)
