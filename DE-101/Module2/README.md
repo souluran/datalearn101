@@ -129,3 +129,18 @@ psql ^
 select * from dw.fc_sales limit 100;
 ```
 14. Done. (Save your money! Don't forget to stop or terminate AWS DB Instance if you are not planning to use it further).
+
+## 8. Superstore Dashboard in Google Looker
+My first experience in Goolge Looker, and I've managed to design my first dashboard here. Despite the tool being intuitively clear and easy to work with, I'd like  to highlight some interesting points:
+- Looker works on a cloud only.
+- Looker supports the PostgreSQL version prior v12 only.
+- Diagrams and control elemnts don't have an editable Header name, it should be added separately like a text label.
+- Control element can be applied on the page level or report level only. No way to assign it to a single chart or another object.
+- When you apply control elemnt on the report level then it will duplicate on each pages. No simple way to control dashboard from one page.
+
+My example of dashboard designed in Looker.
+![cover](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/image/looker/looke-dashboard-page1.JPG)
+![cover](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/image/looker/looke-dashboard-page2.JPG)
+![cover](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/image/looker/looke-dashboard-page3.JPG)
+
+## 9. Superstore Dashboard in Amazon QuickSight
