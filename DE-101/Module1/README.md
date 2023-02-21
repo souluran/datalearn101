@@ -1,5 +1,5 @@
 # Module1 - Role and responsibility of Data Analytics
-Tasks are done in accordance with [DataLearn DE-101 Module1)](https://github.com/Data-Learn/data-engineering/blob/master/DE-101%20Modules/Module01/readme.md)
+Tasks are done in accordance with [DataLearn DE-101 Module1)](https://github.com/Data-Learn/data-engineering/blob/master/DE-101%20Modules/Module01/readme.md).
 
 ## Task 1 - Architecture of Data Analytics solution
 This figure is presented the most common architecture of Data Analytics Solution including four layers - Sources, Staging, Storage, and Business. The diagram was designed using [draw.io](https://app.diagrams.net/) web service.
