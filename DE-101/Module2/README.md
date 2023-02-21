@@ -157,7 +157,7 @@ My example of dashboard designed in Looker.
 - Charts is not interactive, means, no cross-filtering when you click on element in the chart.
 - You can add fiters (like control elements in Looker) and assigned it for individual object or all on the report sheet.
 - Also you can add filters to report level.
-- All objects are editible and customizing (including Header Name).
+- All objects are very editable and customized (including Header Name).
 - No flexibility to resize and moving objects by layout, there is a rigid binding to the grid. 
 - Objects cannot be covered and crossed one another as it works in Looker.
 
