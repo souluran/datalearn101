@@ -137,6 +137,8 @@ My first experience in Goolge Looker, and I've managed to design my first dashbo
 - Diagrams and control elemnts don't have an editable Header name, it should be added separately like a text label.
 - Control element can be applied on the page level or report level only. No way to assign it to a single chart or another object.
 - When you apply control elemnt on the report level then it will duplicate on each pages. No simple way to control dashboard from one page.
+- Working with the map element you cannot do more contrast color of the highlighted sections on the map because your geographical labels will disappear.
+- Also, sometimes there is an issue that some control elements are not shown data due to Looker losing connection to my Amazon RDS.
 
 My example of dashboard designed in Looker.
 ![cover](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/image/looker/looke-dashboard-page1.JPG)
