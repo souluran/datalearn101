@@ -7,6 +7,8 @@ Content:
 5. [Modeling DWH using SQLDBM](https://github.com/souluran/datalearn101/tree/master/DE-101/Module2#5-modeling-dwh-using-sqldbm)
 6. [DWH setup](https://github.com/souluran/datalearn101/tree/master/DE-101/Module2#6-dwh-setup)
 7. [PostgreSQL on Amazon RDS setup](https://github.com/souluran/datalearn101/tree/master/DE-101/Module2#7-postgresql-on-amazon-rds-setup)
+8. [Superstore Dashboard in Google Looker](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/README.md#8-superstore-dashboard-in-google-looker)
+9. [Superstore Dashboard in Amazon QuickSight](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/README.md#9-superstore-dashboard-in-amazon-quicksight)
 
 
 ## 1. PostgreSQL Database setup
