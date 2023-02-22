@@ -1,5 +1,5 @@
 # Module 2 - Database and SQL
-Tasks are done in accordance with [DataLearn DE-101 Module02](https://github.com/Data-Learn/data-engineering/tree/master/DE-101%20Modules/Module02)
+For more details refer to [DataLearn DE-101 Module02](https://github.com/Data-Learn/data-engineering/tree/master/DE-101%20Modules/Module02)
 > PostgreSQL / DBeaver / Amazon RDS / SQLDBM / Google Looker / Amazon QuickSight
 
 Content:

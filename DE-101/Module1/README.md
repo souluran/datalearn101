@@ -1,5 +1,5 @@
 # Module1 - Role and responsibility of Data Analytics
-Tasks are done in accordance with [DataLearn DE-101 Module01](https://github.com/Data-Learn/data-engineering/blob/master/DE-101%20Modules/Module01).
+For more details refer to [DataLearn DE-101 Module01](https://github.com/Data-Learn/data-engineering/blob/master/DE-101%20Modules/Module01).
 > draw.io / MS Excel
 
 ## 1. Architecture of Data Analytics solution
