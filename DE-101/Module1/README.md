@@ -12,4 +12,4 @@ I try to represent the most common architecture of Data Analytics Solution inclu
 
 ## 2. Analytics using MS Excel
 I designed [Dashboard](https://github.com/souluran/datalearn101/blob/master/DE-101/Module1/Superstore%20-%20Dashboard.xlsx) using Superstore dataset in MS Excel.
-![cover](https://github.com/souluran/datalearn101/blob/module3/DE-101/Module1/image/Superstore%20Dashboard.JPG)
+![cover](https://github.com/souluran/datalearn101/blob/master/DE-101/Module1/image/Superstore%20Dashboard.JPG)
