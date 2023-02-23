@@ -144,21 +144,20 @@ psql ^
 14. Done. (Save your money! Don't forget to stop or terminate AWS DB Instance if you are not planning to use it further).
 
 ## 8. Superstore Dashboard in Google Looker
-My first experience in [Goolge Looker](https://lookerstudio.google.com), and I've managed to design my first dashboard here. Despite the tool being intuitively clear and easy to work with, I'd like to highlight some interesting points:
+My first experience in [Goolge Looker](https://lookerstudio.google.com), and I've managed to design my first dashboard here. 
+Despite the tool being intuitively clear and easy to work with, I'd like to highlight some interesting points:
 - Looker works on a cloud only.
 - As Looker is Google service you log into it with your google account.
 - You can easy to share Dashboards with other user who have google account (most people have).
 - Looker supports the PostgreSQL version prior v12 only.
-- Diagrams and control elemnts don't have an editable Header name, it should be added separately like a text label.
+- Header name doesn't exist in Charts, it should be added separately like a text label.
 - Control element can be applied on the page level or report level only. No way to assign it to a single chart or another object.
 - When you apply control elemnt on the report level then it will duplicate on each pages. No simple way to control dashboard from one page.
 - Working with the map element you cannot do more contrast color of the highlighted sections on the map because your geographical labels will disappear.
 - Also, sometimes there is an issue that some control elements are not shown data due to Looker losing connection to my Amazon RDS.
 
 My example of dashboard designed in Looker.
-![cover](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/image/looker/looke-dashboard-page1.JPG)
-![cover](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/image/looker/looke-dashboard-page2.JPG)
-![cover](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/image/looker/looke-dashboard-page3.JPG)
+![cover](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/image/looker/looker-superstore-monthly-sales.JPG)
 
 ## 9. Superstore Dashboard in Amazon QuickSight
 [Amazon QuickSight](https://aws.amazon.com/quicksight/) is one of Cloud services provided by Amazon. I have experience in some of AWS services, but QuickSight is new for me. Working with it some time I found that QuickSight is simpler and more convenient for designing dashboards than Looker. But also I noticed some points related this BI tool:
