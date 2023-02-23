@@ -14,6 +14,18 @@ from (select distinct customer_id, customer_name from stg.orders) o;
 
 
 --delete rows
+truncate table dw.dm_region cascade;
+
+--populate customer dimension
+insert into dw.dm_region 
+select 
+100+row_number() over() as region_id, 
+o.region as region_name 
+from (select distinct region from stg.orders) o;
+----------------------------------------
+
+
+--delete rows
 truncate table dw.dm_shipping cascade;
 
 --populate shipping dimension
@@ -95,18 +107,19 @@ truncate table dw.fc_sales cascade;
 --insert data into fact table fc_sales by querying from staging table and dimension tables
 insert into dw.fc_sales
 select
- 100+row_number() over() as sales_id
- ,c.cust_id
- ,to_char(o.order_date,'yyyymmdd')::int as order_date_id
- ,to_char(o.ship_date,'yyyymmdd')::int as ship_date_id
- ,p.prod_id
- ,s.ship_id
- ,g.geo_id
- ,o.order_id
- ,o.sales
- ,o.profit
- ,o.quantity
- ,o.discount
+100+row_number() over() as sales_id,
+c.cust_id,
+to_char(o.order_date,'yyyymmdd')::int as order_date_id,
+to_char(o.ship_date,'yyyymmdd')::int as ship_date_id,
+p.prod_id,
+s.ship_id,
+g.geo_id,
+dr.region_id,
+o.order_id,
+o.sales,
+o.profit,
+o.quantity,
+o.discount
 from stg.orders o 
 inner join dw.dm_shipping s 
 on o.ship_mode = s.shipping_mode
@@ -123,4 +136,6 @@ on o.product_name = p.product_name
   and o.product_id = p.product_id 
 inner join dw.dm_customer c 
 on o.customer_id = c.customer_id 
-  and o.customer_name = c.customer_name;
+  and o.customer_name = c.customer_name
+inner join dw.dm_region dr
+on o.region = dr.region_name;

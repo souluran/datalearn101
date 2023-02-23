@@ -53,6 +53,8 @@ This [SQL script](https://github.com/souluran/datalearn101/blob/master/DE-101/Mo
 - Number of Returns, Total amount
 - Percent returns to orders
 
+<img src="https://github.com/souluran/datalearn101/blob/module2/DE-101/Module2/image/postgres/Querying%20data%20from%20tables.JPG" width=60% height=60%>
+
 ## 4. Staging area setup
 1. Use the script [staging_setup.sql](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/staging_setup.sql) to create schema 'stg' and table 'orders' in the schema.
 2. Then import data from [orders.txt](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/data/orders.txt) into table stg.orders.
@@ -60,17 +62,19 @@ This [SQL script](https://github.com/souluran/datalearn101/blob/master/DE-101/Mo
 copy stg.orders from 'your_path_to_file/orders.txt' with delimiter '|' header;
 ```
 
+<img src="https://github.com/souluran/datalearn101/blob/module2/DE-101/Module2/image/postgres/Staging%20schema.JPG" width=50% height=50%>
+
 ## 5. Modeling DWH using SQLDBM
 Desinged conceptual, logical and physical models of DWH [SQLDBM](https://sqldbm.com/Home/) web application.
 
 1. Conceptual model is very simple and it consists of six entities. It designed in Star schema (by Kimball model).
-![cover](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/image/Conceptual%20model.JPG)
+<img src="https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/image/Conceptual%20model.PNG" width=60% height=60%>
 
 2. Logical model shows the entities including attributes.
-![cover](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/image/Logical%20model.JPG)
+<img src="https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/image/Logical%20model.PNG" width=60% height=60%>
 
 3. Physical model shows the tables and their relationships on database level with describing all columns, data types, PK and FK keys etc. 
-![cover](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/image/Physical%20model.JPG)
+<img src="https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/image/Physical%20model.PNG" width=80% height=80%>
 
 ## 6. DWH setup
 1. In the SQLDBM application using Forward engineer, generate DDL scripts for each table on the diagram. All DDL code is already stored in the single script [datamart_setup.sql](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/datamart_setup.sql). 
@@ -102,6 +106,8 @@ on s.order_date_id = dt.dateid
 ;
 ```
 
+<img src="https://github.com/souluran/datalearn101/blob/module2/DE-101/Module2/image/postgres/DWH%20schema.JPG" width=50% height=50%>
+
 ## 7. PostgreSQL on Amazon RDS setup
 1. Create [AWS Free Tire account](https://aws.amazon.com/free/?nc1=h_ls).
 2. After you create AWS account, you will login into [AWS management console](https://console.aws.amazon.com/console/home).
@@ -113,6 +119,9 @@ on s.order_date_id = dt.dateid
   - disable Monitoring and Backup options, because they are charged.
   - allow Public Access to connect to DB instance through your local, otherwise, you will need to configure Bastion EC2 Instance for using SSH tunnel [rds-connection-using-bastion](https://aws.amazon.com/premiumsupport/knowledge-center/rds-connect-using-bastion-host-linux/).
   - other settings can be left by default.
+
+<img src="https://github.com/souluran/datalearn101/blob/module2/DE-101/Module2/image/postgres/Postgres%20in%20Amazon%20RDS.JPG" width=50% height=50%>
+
 9. Once DB instance is created, let's connect to it, for example using DBeaver tool. 
   Note, you might need to download and install [Postgres JDBC driver](https://jdbc.postgresql.org/download/).
   Also, here you can read more about [connection to RDS Postgres](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ConnectToPostgreSQLInstance.html).
@@ -129,28 +138,26 @@ psql ^
 ```
 11. Next, we create datamart schema and tables using the script [datamart_setup](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/datamart_setup.sql).
 12. Inserting datmart table using the script [datamart_inserting](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/datamart_inserting.sql).
-13. Just run a simple query to check fc_orders table.
-```
-select * from dw.fc_sales limit 100;
-```
+
+<img src="https://github.com/souluran/datalearn101/blob/module2/DE-101/Module2/image/postgres/DWH%20schema%20in%20Amazon%20RDS%20Postgres.JPG" width=50% height=50%>
+
 14. Done. (Save your money! Don't forget to stop or terminate AWS DB Instance if you are not planning to use it further).
 
 ## 8. Superstore Dashboard in Google Looker
-My first experience in [Goolge Looker](https://lookerstudio.google.com), and I've managed to design my first dashboard here. Despite the tool being intuitively clear and easy to work with, I'd like to highlight some interesting points:
+My first experience in [Goolge Looker](https://lookerstudio.google.com), and I've managed to design my first dashboard here. 
+Despite the tool being intuitively clear and easy to work with, I'd like to highlight some interesting points:
 - Looker works on a cloud only.
 - As Looker is Google service you log into it with your google account.
 - You can easy to share Dashboards with other user who have google account (most people have).
 - Looker supports the PostgreSQL version prior v12 only.
-- Diagrams and control elemnts don't have an editable Header name, it should be added separately like a text label.
+- Header name doesn't exist in Charts, it should be added separately like a text label.
 - Control element can be applied on the page level or report level only. No way to assign it to a single chart or another object.
 - When you apply control elemnt on the report level then it will duplicate on each pages. No simple way to control dashboard from one page.
 - Working with the map element you cannot do more contrast color of the highlighted sections on the map because your geographical labels will disappear.
 - Also, sometimes there is an issue that some control elements are not shown data due to Looker losing connection to my Amazon RDS.
 
 My example of dashboard designed in Looker.
-![cover](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/image/looker/looke-dashboard-page1.JPG)
-![cover](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/image/looker/looke-dashboard-page2.JPG)
-![cover](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/image/looker/looke-dashboard-page3.JPG)
+![cover](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/image/looker/looker-superstore-monthly-sales.JPG)
 
 ## 9. Superstore Dashboard in Amazon QuickSight
 [Amazon QuickSight](https://aws.amazon.com/quicksight/) is one of Cloud services provided by Amazon. I have experience in some of AWS services, but QuickSight is new for me. Working with it some time I found that QuickSight is simpler and more convenient for designing dashboards than Looker. But also I noticed some points related this BI tool:

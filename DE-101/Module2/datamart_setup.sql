@@ -10,7 +10,16 @@ CREATE TABLE dw.dm_customer
  cust_id       serial NOT NULL,
  customer_id   varchar(8) NOT NULL,
  customer_name varchar(22) NOT NULL,
- CONSTRAINT PK_1 PRIMARY KEY ( cust_id )
+ CONSTRAINT PK_dm_customer PRIMARY KEY ( cust_id )
+);
+
+
+--create Region dimension
+CREATE TABLE dw.dm_region
+(
+ region_id       serial NOT NULL,
+ region_name  varchar(8) NOT NULL,
+ CONSTRAINT PK_dm_region PRIMARY KEY ( region_id )
 );
 
 
@@ -73,6 +82,7 @@ CREATE TABLE dw.fc_sales
  prod_id       integer NOT NULL,
  ship_id       integer NOT NULL,
  geo_id        integer NOT NULL,
+ region_id     integer NOT NULL,
  order_id      varchar(25) NOT NULL,
  sales         numeric(9,4) NOT NULL,
  profit        numeric(21,16) NOT NULL,
@@ -81,6 +91,7 @@ CREATE TABLE dw.fc_sales
  CONSTRAINT PK_fc_sales PRIMARY KEY ( sales_id ),
  CONSTRAINT FK_dim_product FOREIGN KEY ( prod_id ) REFERENCES dw.dm_product ( prod_id ),
  CONSTRAINT FK_dim_geo FOREIGN KEY ( geo_id ) REFERENCES dw.dm_geo ( geo_id ),
+ CONSTRAINT FK_dim_region FOREIGN KEY ( region_id ) REFERENCES dw.dm_region ( region_id ),
  CONSTRAINT FK_dim_shipping FOREIGN KEY ( ship_id ) REFERENCES dw.dm_shipping ( ship_id ),
  CONSTRAINT FK_dim_customer FOREIGN KEY ( cust_id ) REFERENCES dw.dm_customer ( cust_id ),
  CONSTRAINT FK_dim_calendar FOREIGN KEY ( order_date_id ) REFERENCES dw.dm_calendar ( dateid )
@@ -110,4 +121,9 @@ CREATE INDEX IDX_FK_dim_customer ON dw.fc_sales
 CREATE INDEX IDX_FK_dim_calendar ON dw.fc_sales
 (
  order_date_id
+);
+
+CREATE INDEX IDX_FK_dim_region ON dw.fc_sales
+(
+ region_id
 );
