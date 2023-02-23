@@ -68,13 +68,13 @@ copy stg.orders from 'your_path_to_file/orders.txt' with delimiter '|' header;
 Desinged conceptual, logical and physical models of DWH [SQLDBM](https://sqldbm.com/Home/) web application.
 
 1. Conceptual model is very simple and it consists of six entities. It designed in Star schema (by Kimball model).
-<img src="https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/image/Conceptual%20model.JPG" width=60% height=60%>
+<img src="https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/image/Conceptual%20model.PNG" width=60% height=60%>
 
 2. Logical model shows the entities including attributes.
-<img src="https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/image/Logical%20model.JPG" width=60% height=60%>
+<img src="https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/image/Logical%20model.PNG" width=60% height=60%>
 
 3. Physical model shows the tables and their relationships on database level with describing all columns, data types, PK and FK keys etc. 
-<img src="https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/image/Physical%20model.JPG" width=80% height=80%>
+<img src="https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/image/Physical%20model.PNG" width=80% height=80%>
 
 ## 6. DWH setup
 1. In the SQLDBM application using Forward engineer, generate DDL scripts for each table on the diagram. All DDL code is already stored in the single script [datamart_setup.sql](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/datamart_setup.sql). 
