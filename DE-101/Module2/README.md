@@ -53,12 +53,16 @@ This [SQL script](https://github.com/souluran/datalearn101/blob/master/DE-101/Mo
 - Number of Returns, Total amount
 - Percent returns to orders
 
+<img src="https://github.com/souluran/datalearn101/blob/module2/DE-101/Module2/image/postgres/Querying%20data%20from%20tables.JPG" width=60% height=60%>
+
 ## 4. Staging area setup
 1. Use the script [staging_setup.sql](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/staging_setup.sql) to create schema 'stg' and table 'orders' in the schema.
 2. Then import data from [orders.txt](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/data/orders.txt) into table stg.orders.
 ```
 copy stg.orders from 'your_path_to_file/orders.txt' with delimiter '|' header;
 ```
+
+<img src="https://github.com/souluran/datalearn101/blob/module2/DE-101/Module2/image/postgres/Staging%20schema.JPG" width=50% height=50%>
 
 ## 5. Modeling DWH using SQLDBM
 Desinged conceptual, logical and physical models of DWH [SQLDBM](https://sqldbm.com/Home/) web application.
@@ -102,6 +106,8 @@ on s.order_date_id = dt.dateid
 ;
 ```
 
+<img src="https://github.com/souluran/datalearn101/blob/module2/DE-101/Module2/image/postgres/DWH%20schema.JPG" width=50% height=50%>
+
 ## 7. PostgreSQL on Amazon RDS setup
 1. Create [AWS Free Tire account](https://aws.amazon.com/free/?nc1=h_ls).
 2. After you create AWS account, you will login into [AWS management console](https://console.aws.amazon.com/console/home).
@@ -113,6 +119,9 @@ on s.order_date_id = dt.dateid
   - disable Monitoring and Backup options, because they are charged.
   - allow Public Access to connect to DB instance through your local, otherwise, you will need to configure Bastion EC2 Instance for using SSH tunnel [rds-connection-using-bastion](https://aws.amazon.com/premiumsupport/knowledge-center/rds-connect-using-bastion-host-linux/).
   - other settings can be left by default.
+
+<img src="https://github.com/souluran/datalearn101/blob/module2/DE-101/Module2/image/postgres/Postgres%20in%20Amazon%20RDS.JPG" width=50% height=50%>
+
 9. Once DB instance is created, let's connect to it, for example using DBeaver tool. 
   Note, you might need to download and install [Postgres JDBC driver](https://jdbc.postgresql.org/download/).
   Also, here you can read more about [connection to RDS Postgres](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ConnectToPostgreSQLInstance.html).
@@ -129,10 +138,9 @@ psql ^
 ```
 11. Next, we create datamart schema and tables using the script [datamart_setup](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/datamart_setup.sql).
 12. Inserting datmart table using the script [datamart_inserting](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/datamart_inserting.sql).
-13. Just run a simple query to check fc_orders table.
-```
-select * from dw.fc_sales limit 100;
-```
+
+<img src="https://github.com/souluran/datalearn101/blob/module2/DE-101/Module2/image/postgres/DWH%20schema%20in%20Amazon%20RDS%20Postgres.JPG" width=50% height=50%>
+
 14. Done. (Save your money! Don't forget to stop or terminate AWS DB Instance if you are not planning to use it further).
 
 ## 8. Superstore Dashboard in Google Looker
