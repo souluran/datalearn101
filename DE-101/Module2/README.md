@@ -177,7 +177,7 @@ Despite the tool being intuitively clear and easy to work with, I'd like to high
 
 My example of dashboard designed in Looker.
 
-<img src="https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/image/looker/looker-dashboard.PNG" width=50% height=50%>
+<img src="https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/image/looker/looker-dashboard.PNG" width=80% height=80%>
 
 ## 9. Superstore Dashboard in Amazon QuickSight
 [Amazon QuickSight](https://aws.amazon.com/quicksight/) is one of Cloud services provided by Amazon. I have experience in some of AWS services, but QuickSight is new for me. Working with it some time I found that QuickSight is simpler and more convenient for designing dashboards than Looker. But also I noticed some points related this BI tool:
@@ -193,4 +193,4 @@ My example of dashboard designed in Looker.
 
 My example of dashboard designed in QuickSight.
 
-<img src="https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/image/quicksight/quicksight-dashboard.PNG" width=50% height=50%>
+<img src="https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/image/quicksight/quicksight-dashboard.PNG" width=80% height=80%>
