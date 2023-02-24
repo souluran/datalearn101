@@ -176,6 +176,7 @@ Despite the tool being intuitively clear and easy to work with, I'd like to high
 - Working with the map element you cannot do more contrast color of the highlighted sections on the map because your geographical labels will disappear.
 
 My example of dashboard designed in Looker.
+
 <img src="https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/image/looker/looker-dashboard-monthly.PNG" width=50% height=50%>
 
 ## 9. Superstore Dashboard in Amazon QuickSight
@@ -191,4 +192,5 @@ My example of dashboard designed in Looker.
 - Objects cannot be covered and crossed one another as it works in Looker.
 
 My example of dashboard designed in QuickSight.
+
 <img src="https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/image/quicksight/quicksight-dashboard-monthly.PNG" width=50% height=50%>
