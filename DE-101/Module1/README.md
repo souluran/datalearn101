@@ -8,8 +8,10 @@ I try to represent the most common architecture of Data Analytics Solution inclu
 - Staging layer - optional layer which used for data source transformation by ETL tools.
 - Storage layer - basically data warehouse for storing structured data coming from OLTP databases, ERP, CRM systems. Also, here is presented Data Lake for storing flat files, unstructure data (video, audio etc.) and any others.
 - Business layer - different BI tools, ML and predection analytics system, Reporting system and other ones for connecting, analyzing and representing data from Storage layer.
-![cover](https://github.com/souluran/datalearn101/blob/master/DE-101/Module1/image/Simple%20Data%20Analytics%20Architecture.drawio.svg)
+
+<img src="https://github.com/souluran/datalearn101/blob/master/DE-101/Module1/image/Simple%20Data%20Analytics%20Architecture.drawio.svg" width=50% height=50%>
 
 ## 2. Analytics using MS Excel
-I designed [Dashboard](https://github.com/souluran/datalearn101/blob/master/DE-101/Module1/Superstore%20-%20Dashboard.xlsx) using Superstore dataset in MS Excel.
-![cover](https://github.com/souluran/datalearn101/blob/master/DE-101/Module1/image/Superstore%20Dashboard.JPG)
+I designed [Dashboard](https://github.com/souluran/datalearn101/blob/master/DE-101/Module1/Superstore%20-%20Dashboard.xlsx) using Superstore dataset in MS Excel
+
+<img src="https://github.com/souluran/datalearn101/blob/master/DE-101/Module1/image/excel-dashboard.PNG" width=50% height=50%>
