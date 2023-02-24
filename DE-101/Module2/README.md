@@ -87,6 +87,7 @@ s.order_id ,
 dt.date,
 dc.customer_name ,
 dp.category ,
+dp.sub_category ,
 dp.segment ,
 dp.product_name ,
 dg.state ,
@@ -117,6 +118,7 @@ group by s.order_id ,
 dt.date,
 dc.customer_name ,
 dp.category ,
+dp.sub_category ,
 dp.segment ,
 dp.product_name ,
 dg.state ,
@@ -124,7 +126,7 @@ dr.region_name ,
 ds.shipping_mode
 ```
 
-<img src="https://github.com/souluran/datalearn101/blob/module2/DE-101/Module2/image/postgres/DWH%20schema.JPG" width=50% height=50%>
+<img src="https://github.com/souluran/datalearn101/blob/module2/DE-101/Module2/image/postgres/DWH%20schema.PNG" width=50% height=50%>
 
 ## 7. PostgreSQL on Amazon RDS setup
 1. Create [AWS Free Tire account](https://aws.amazon.com/free/?nc1=h_ls).
@@ -157,7 +159,7 @@ psql ^
 11. Next, we create datamart schema and tables using the script [datamart_setup](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/datamart_setup.sql).
 12. Inserting datmart table using the script [datamart_inserting](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/datamart_inserting.sql).
 
-<img src="https://github.com/souluran/datalearn101/blob/module2/DE-101/Module2/image/postgres/DWH%20schema%20in%20Amazon%20RDS%20Postgres.JPG" width=50% height=50%>
+<img src="https://github.com/souluran/datalearn101/blob/module2/DE-101/Module2/image/postgres/DWH%20schema%20in%20Amazon%20RDS%20Postgres.PNG" width=50% height=50%>
 
 14. Done. (Save your money! Don't forget to stop or terminate AWS DB Instance if you are not planning to use it further).
 
@@ -172,10 +174,9 @@ Despite the tool being intuitively clear and easy to work with, I'd like to high
 - Control element can be applied on the page level or report level only. No way to assign it to a single chart or another object.
 - When you apply control elemnt on the report level then it will duplicate on each pages. No simple way to control dashboard from one page.
 - Working with the map element you cannot do more contrast color of the highlighted sections on the map because your geographical labels will disappear.
-- Also, sometimes there is an issue that some control elements are not shown data due to Looker losing connection to my Amazon RDS.
 
 My example of dashboard designed in Looker.
-![cover](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/image/looker/looker-superstore-monthly-sales.JPG)
+<img src="https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/image/looker/looker-dashboard-monthly.PNG" width=50% height=50%>
 
 ## 9. Superstore Dashboard in Amazon QuickSight
 [Amazon QuickSight](https://aws.amazon.com/quicksight/) is one of Cloud services provided by Amazon. I have experience in some of AWS services, but QuickSight is new for me. Working with it some time I found that QuickSight is simpler and more convenient for designing dashboards than Looker. But also I noticed some points related this BI tool:
@@ -186,10 +187,8 @@ My example of dashboard designed in Looker.
 - You can add fiters (like control elements in Looker) and assigned it for individual object or all on the report sheet.
 - Also you can add filters to report level.
 - All objects are very editable and customized (including Header Name).
-- No flexibility to resize and moving objects by layout, there is a rigid binding to the grid. 
+- No flexibility to resize and moving objects by layout, the objecta are alignment automatically.
 - Objects cannot be covered and crossed one another as it works in Looker.
 
 My example of dashboard designed in QuickSight.
-![cover](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/image/quicksight/quicksight-dashboard-page1.JPG)
-![cover](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/image/quicksight/quicksight-dashboard-page2.JPG)
-![cover](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/image/quicksight/quicksight-dashboard-page3.JPG)
+<img src="https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/image/quicksight/quicksight-dashboard-monthly.PNG" width=50% height=50%>
