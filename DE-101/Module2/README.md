@@ -140,7 +140,7 @@ ds.shipping_mode
   - allow Public Access to connect to DB instance through your local, otherwise, you will need to configure Bastion EC2 Instance for using SSH tunnel [rds-connection-using-bastion](https://aws.amazon.com/premiumsupport/knowledge-center/rds-connect-using-bastion-host-linux/).
   - other settings can be left by default.
 
-<img src="https://github.com/souluran/datalearn101/blob/module2/DE-101/Module2/image/postgres/Postgres%20in%20Amazon%20RDS.JPG" width=50% height=50%>
+<img src="https://github.com/souluran/datalearn101/blob/module2/DE-101/Module2/image/postgres/Postgres%20in%20Amazon%20RDS.JPG" width=70% height=70%>
 
 9. Once DB instance is created, let's connect to it, for example using DBeaver tool. 
   Note, you might need to download and install [Postgres JDBC driver](https://jdbc.postgresql.org/download/).
