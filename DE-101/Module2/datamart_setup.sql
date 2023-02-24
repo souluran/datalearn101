@@ -98,32 +98,32 @@ CREATE TABLE dw.fc_sales
 );
 
 --create indexes for foreign keys
-CREATE INDEX IDX_FK_dim_product ON dw.fc_sales
+CREATE INDEX INDX_FK_dim_product ON dw.fc_sales
 (
  prod_id
 );
 
-CREATE INDEX IDX_FK_dim_geo ON dw.fc_sales
+CREATE INDEX INDX_FK_dim_geo ON dw.fc_sales
 (
  geo_id
 );
 
-CREATE INDEX IDX_FK_dim_shipping ON dw.fc_sales
+CREATE INDEX INDX_FK_dim_shipping ON dw.fc_sales
 (
  ship_id
 );
 
-CREATE INDEX IDX_FK_dim_customer ON dw.fc_sales
+CREATE INDEX INDX_FK_dim_customer ON dw.fc_sales
 (
  cust_id
 );
 
-CREATE INDEX IDX_FK_dim_calendar ON dw.fc_sales
+CREATE INDEX INDX_FK_dim_calendar ON dw.fc_sales
 (
  order_date_id
 );
 
-CREATE INDEX IDX_FK_dim_region ON dw.fc_sales
+CREATE INDEX INDX_FK_dim_region ON dw.fc_sales
 (
  region_id
 );
