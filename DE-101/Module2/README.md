@@ -123,11 +123,11 @@ I want to share some thoughts and notices about this tool:
 - As Looker is Google service you log into it with your google account.
 - You can easy to share Dashboards with other user who have google account (most people have).
 - Looker supports the PostgreSQL version prior v12 only.
-- You can move visual and control elements by page layout by pixel.
+- You can move visual and control objects by pixel in the page.
 - There are many settings for tuning visual elements.
 - Header name doesn't exist in Charts, it should be added separately like a text label.
 - Control element can be applied on the page level or report level only. No way to assign it to a single chart or another object.
-- When you apply control elemnt on the report level then it will duplicate on each pages. No simple way to control dashboard from one page.
+- When you apply control element on the report level then it will be duplicated on each pages. No simple way to control dashboard from one page.
 - Working with the map element you cannot do more contrast color of the highlighted sections on the map because your geographical labels will disappear.
 
 My example of dashboard designed in Googel Looker.
@@ -140,8 +140,8 @@ There are some points I'd wanted to share about this tool:
 - QuickSight works on a cloud only as Looker.
 - You need to have AWS Account.
 - In Standard Free tier, you cannot share Dashboards with external users out of your Amazon account. Instead, you need to share it for IAM users.
-- You can add fiters (like control elements in Looker) and assigned it for individual object or all on the report sheet.
-- Also you can add filters to report level.
+- You can add filters (like control elements in Looker) and assigned it for individual visual or for all on the page sheet.
+- Also you can pin filters on the top of the page (a special place on the page allocated for controls).
 - All objects are very editable and customized (including Header Name).
 - There are two modes to add and place elements in the dashboard grid: tiled (visuals snap to a grid layout), free-form (visuals can be placed anywhere).
 
