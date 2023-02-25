@@ -16,8 +16,8 @@ Content:
 
 
 ## 1. PostgreSQL Database setup
-1. Downloaded [PostgreSQL](https://www.postgresql.org/download/) and install on your machine.
-2. Downloaded and install [DBeaver](https://dbeaver.io/download/) client tool for connecting to PostgreSQL and performing any commands.
+1. Downloaded [PostgreSQL](https://www.postgresql.org/download/) and installed on your machine.
+2. Downloaded and installed [DBeaver](https://dbeaver.io/download/) client tool for connecting to PostgreSQL and performing any commands.
 3. Created and established a connection to Postgres in DBeaver.
 4. Created a new database `postgres`.
 ```
@@ -29,7 +29,7 @@ CREATE DATABASE postgres;
 - [orders.sql](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/orders.sql)
 - [people.sql](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/people.sql)
 - [returns.sql](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/returns.sql)
-3. Imported [superstore data](https://github.com/souluran/datalearn101/tree/master/DE-101/Module2/data) to the tables using the following commands:
+3. Imported [superstore data](https://github.com/souluran/datalearn101/tree/master/DE-101/Module2/data) into the tables using the following commands:
 ```
 copy orders from 'your_path_to_file/orders.txt' with delimiter '|' header;
 copy people from 'your_path_to_file/people.txt' with delimiter '|' header;
