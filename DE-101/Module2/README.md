@@ -98,7 +98,7 @@ Desinged conceptual, logical and physical models of superstore data warehouse us
 
 5. Connected to Postgres hosted in Amazon RDS through DBeaver in my local.
 6. Created staging schema and table [staging table](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/staging_setup.sql). Inserted data into the table.
-> Note, `copy` command cannot supported for AWS RDS Postgres from DBeaver.
+> Note, the command `copy` isn't supported in DBeaver for AWS RDS Postgres.
 But it works via `psql` cli. Note, you must delete a header line from [orders.txt](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/data/orders.txt).
 ```
 psql ^
