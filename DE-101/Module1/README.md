@@ -1,9 +1,7 @@
 # Module1 - Role and responsibility of Data Analytics
 [DataLearn DE-101 Module01](https://github.com/Data-Learn/data-engineering/blob/master/DE-101%20Modules/Module01).
 
-Tools used in this module:
-- draw.io
-- MS Excel
+~draw.io~ ~MS Excel~
 
 ## 1. Architecture of Data Analytics solution
 I pictured the schema of the Data Analytics solution using [draw.io](https://app.diagrams.net/).

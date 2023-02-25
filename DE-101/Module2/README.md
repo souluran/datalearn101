@@ -1,6 +1,7 @@
 # Module 2 - Database and SQL
-For more details refer to [DataLearn DE-101 Module02](https://github.com/Data-Learn/data-engineering/tree/master/DE-101%20Modules/Module02)
-> PostgreSQL / DBeaver / Amazon RDS / SQLDBM / Google Looker / Amazon QuickSight
+[DataLearn DE-101 Module02](https://github.com/Data-Learn/data-engineering/tree/master/DE-101%20Modules/Module02)
+
+`PostgreSQL` `psql` `DBeaver` `Amazon RDS` `SQLDBM` `Google Looker` `Amazon QuickSight`
 
 Content:
 1. [PostgreSQL Database setup](https://github.com/souluran/datalearn101/tree/master/DE-101/Module2#1-postgresql-database-setup)
@@ -15,21 +16,20 @@ Content:
 
 
 ## 1. PostgreSQL Database setup
-1. Download [PostgreSQL](https://www.postgresql.org/download/) and install on your machine.
-2. Download and install [DBeaver](https://dbeaver.io/download/) client tool for connecting to PostgreSQL and performing any commands.
-3. Create and establish a connection to Postgres in DBeaver.
-4. Create new database 'postgres' or with another name you want.
+1. Downloaded [PostgreSQL](https://www.postgresql.org/download/) and install on your machine.
+2. Downloaded and install [DBeaver](https://dbeaver.io/download/) client tool for connecting to PostgreSQL and performing any commands.
+3. Created and established a connection to Postgres in DBeaver.
+4. Created a new database `postgres`.
 ```
 CREATE DATABASE postgres;
 ```
 
 ## 2. Create tables and importing data
-1. Create tables orders, people and returns in the database.
+1. Created tables `orders`, `people` and `returns` in the database.
 - [orders.sql](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/orders.sql)
 - [people.sql](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/people.sql)
 - [returns.sql](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/returns.sql)
-2. Copy [datasets](https://github.com/souluran/datalearn101/tree/master/DE-101/Module2/data) to you local machine.
-3. Import superstore data to the tables using the following commands:
+3. Imported [superstore data](https://github.com/souluran/datalearn101/tree/master/DE-101/Module2/data) to the tables using the following commands:
 ```
 copy orders from 'your_path_to_file/orders.txt' with delimiter '|' header;
 copy people from 'your_path_to_file/people.txt' with delimiter '|' header;
@@ -37,7 +37,7 @@ copy returns from 'your_path_to_file/returns.txt' with delimiter '|' header;
 ```
 
 ## 3. Analyzing superstore dataset using SQL-queries
-This [SQL script](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/superstore_queries.sql) includes some metrics and insigths about orders, returns, sales, profit, products and customer.
+Wrote SQL-queries to superstore data [SQL-queries](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/superstore_queries.sql) to get some metrics and insigths about orders, returns, sales, profit, products and customer.
 - Total Sales
 - Total Profit
 - Profit Ratio
@@ -56,8 +56,8 @@ This [SQL script](https://github.com/souluran/datalearn101/blob/master/DE-101/Mo
 <img src="https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/image/postgres/Querying%20data%20from%20tables.JPG" width=60% height=60%>
 
 ## 4. Staging area setup
-1. Use the script [staging_setup.sql](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/staging_setup.sql) to create schema 'stg' and table 'orders' in the schema.
-2. Then import data from [orders.txt](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/data/orders.txt) into table stg.orders.
+1. Created staging schema `stg` and table `orders` [staging_setup.sql](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/staging_setup.sql).
+2. Imported data from [orders.txt](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/data/orders.txt) into table `stg.orders`.
 ```
 copy stg.orders from 'your_path_to_file/orders.txt' with delimiter '|' header;
 ```
@@ -65,7 +65,7 @@ copy stg.orders from 'your_path_to_file/orders.txt' with delimiter '|' header;
 <img src="https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/image/postgres/Staging%20schema.JPG" width=50% height=50%>
 
 ## 5. Modeling DWH using SQLDBM
-Desinged conceptual, logical and physical models of DWH [SQLDBM](https://sqldbm.com/Home/) web application.
+Desinged conceptual, logical and physical models of superstore data warehouse using [SQLDBM](https://sqldbm.com/Home/).
 
 1. Conceptual model is very simple and it consists of six entities. It designed in Star schema (by Kimball model).
 <img src="https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/image/Conceptual%20model.PNG" width=60% height=60%>
@@ -73,80 +73,33 @@ Desinged conceptual, logical and physical models of DWH [SQLDBM](https://sqldbm.
 2. Logical model shows the entities including attributes.
 <img src="https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/image/Logical%20model.PNG" width=60% height=60%>
 
-3. Physical model shows the tables and their relationships on database level with describing all columns, data types, PK and FK keys etc. 
+3. Physical model describes the tables and their relationships on database level including column names, data types, PK and FK keys etc.
 <img src="https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/image/Physical%20model.PNG" width=80% height=80%>
 
 ## 6. DWH setup
-1. In the SQLDBM application using Forward engineer, generate DDL scripts for each table on the diagram. All DDL code is already stored in the single script [datamart_setup.sql](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/datamart_setup.sql). 
-2. Now running the script in your Postgres database.
-3. Then insert data into DWH tables. Just use and run the script [datamart_inserting.sql](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/datamart_inserting.sql).
-4. Datamart is setup. Let's execute a query to check that's all OK.
-```
-select 
-s.order_id ,
-dt.date,
-dc.customer_name ,
-dp.category ,
-dp.sub_category ,
-dp.segment ,
-dp.product_name ,
-dg.state ,
-dr.region_name ,
-ds.shipping_mode ,
-sum(s.quantity) as quantity ,
-sum(s.sales) as sales ,
-sum(s.profit) as profit ,
-sum(s.profit)/sum(s.sales) as profit_rate,
-sum(s.discount) as discount 
-from dw.fc_sales s 
-inner join dw.dm_customer dc 
-on s.cust_id = dc.cust_id 
-inner join dw.dm_product dp 
-on s.prod_id = dp.prod_id 
-inner join dw.dm_geo dg 
-on s.geo_id = dg.geo_id 
-  and dg.country = 'United States' 
-inner join dw.dm_shipping ds 
-on s.ship_id = ds.ship_id 
-inner join dw.dm_calendar dt 
-on s.order_date_id = dt.dateid
-  and dt.year = 2019
-  and dt.month = 12
-inner join dw.dm_region dr 
-on s.region_id = dr.region_id 
-group by s.order_id ,
-dt.date,
-dc.customer_name ,
-dp.category ,
-dp.sub_category ,
-dp.segment ,
-dp.product_name ,
-dg.state ,
-dr.region_name ,
-ds.shipping_mode
-```
+1. In the SQLDBM application using Forward engineer, generated DDL scripts for each table on the diagram. All DDL code saved into the single script [datamart_setup.sql](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/datamart_setup.sql). 
+2. Deployed script to my local Postgres database for creating schema `dw` and the corresponded tables.
+3. Then inserted data into the tables [datamart_inserting.sql](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/datamart_inserting.sql).
 
 <img src="https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/image/postgres/DWH%20schema.PNG" width=50% height=50%>
 
 ## 7. PostgreSQL on Amazon RDS setup
-1. Create [AWS Free Tire account](https://aws.amazon.com/free/?nc1=h_ls).
-2. After you create AWS account, you will login into [AWS management console](https://console.aws.amazon.com/console/home).
-3. Then in the Search type RDS and click on it.
-  Read and use this guide [how to create RDS Postgres](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_GettingStarted.CreatingConnecting.PostgreSQL.html).
-4. In the RDS page you can find many different things, but you need click Create Database.
-5. For this module we will create Postgres DB instance, so choose it (Postgres version you choose on your own).
+1. Created [AWS Free Tire account](https://aws.amazon.com/free/?nc1=h_ls).
+2. Loged into [AWS management console](https://console.aws.amazon.com/console/home).
+3. Then in menu tab went to Amazon RDS for creating Postgres DB Instance.
+  Read and used this guide [how to create RDS Postgres](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_GettingStarted.CreatingConnecting.PostgreSQL.html).
+4. Created Postgres DB instance (used v12 because this last actual version which Goolgel Looker supports).
   - set Template as Free Tier. 
-  - disable Monitoring and Backup options, because they are charged.
-  - allow Public Access to connect to DB instance through your local, otherwise, you will need to configure Bastion EC2 Instance for using SSH tunnel [rds-connection-using-bastion](https://aws.amazon.com/premiumsupport/knowledge-center/rds-connect-using-bastion-host-linux/).
-  - other settings can be left by default.
+  - disabled Monitoring and Backup options, because they are charged.
+  - allowed Public Access to connect to DB instance through my local, otherwise, I would be needed to configure EC2 Instance as Bastion for using SSH tunnel [rds-connection-using-bastion](https://aws.amazon.com/premiumsupport/knowledge-center/rds-connect-using-bastion-host-linux/).
+  - other settings were set by default.
 
 <img src="https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/image/postgres/Postgres%20in%20Amazon%20RDS.JPG" width=70% height=70%>
 
-9. Once DB instance is created, let's connect to it, for example using DBeaver tool. 
-  Note, you might need to download and install [Postgres JDBC driver](https://jdbc.postgresql.org/download/).
-  Also, here you can read more about [connection to RDS Postgres](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ConnectToPostgreSQLInstance.html).
-10. Now, the time to creta [staging table](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/staging_setup.sql). Note, 'copy' command cannot supported for AWS RDS Postgres from DBeaver.
-  But you run it in pslq command line like below. Note, you must delete a header line from [orders.txt](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/data/orders.txt).
+5. Connected to Postgres hosted in Amazon RDS through DBeaver in my local.
+6. Created staging schema and table [staging table](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/staging_setup.sql). Inserted data into the table.
+> Note, `copy` command cannot supported for AWS RDS Postgres from DBeaver.
+But it works via `psql` cli. Note, you must delete a header line from [orders.txt](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/data/orders.txt).
 ```
 psql ^
    --host=<AWS DB instance endpoint> ^
@@ -156,40 +109,41 @@ psql ^
    --dbname=<database name> ^
    --command="\copy stg.orders from 'your_path_to_file/orders.txt' with delimiter '|';"
 ```
-11. Next, we create datamart schema and tables using the script [datamart_setup](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/datamart_setup.sql).
-12. Inserting datmart table using the script [datamart_inserting](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/datamart_inserting.sql).
+7. Next, created `dw` schema and tables [datamart_setup](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/datamart_setup.sql), and populated data
+[datamart_inserting](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/datamart_inserting.sql).
 
 <img src="https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/image/postgres/DWH%20schema%20in%20Amazon%20RDS%20Postgres.PNG" width=50% height=50%>
 
-14. Done. (Save your money! Don't forget to stop or terminate AWS DB Instance if you are not planning to use it further).
+> Note: save your money, terminate Amazon RDS Instance if you are not going to use it at all
 
 ## 8. Superstore Dashboard in Google Looker
-My first experience in [Goolge Looker](https://lookerstudio.google.com), and I've managed to design my first dashboard here. 
-Despite the tool being intuitively clear and easy to work with, I'd like to highlight some interesting points:
+I was very new in [Goolge Looker](https://lookerstudio.google.com), but after a few hours, I managed to design my first Dashboard here.
+I want to share some thoughts and notices about this tool:
 - Looker works on a cloud only.
 - As Looker is Google service you log into it with your google account.
 - You can easy to share Dashboards with other user who have google account (most people have).
 - Looker supports the PostgreSQL version prior v12 only.
+- You can move visual and control elements by page layout by pixel.
+- There are many settings for tuning visual elements.
 - Header name doesn't exist in Charts, it should be added separately like a text label.
 - Control element can be applied on the page level or report level only. No way to assign it to a single chart or another object.
 - When you apply control elemnt on the report level then it will duplicate on each pages. No simple way to control dashboard from one page.
 - Working with the map element you cannot do more contrast color of the highlighted sections on the map because your geographical labels will disappear.
 
-My example of dashboard designed in Looker.
+My example of dashboard designed in Googel Looker.
 
 <img src="https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/image/looker/looker-dashboard.PNG" width=80% height=80%>
 
 ## 9. Superstore Dashboard in Amazon QuickSight
-[Amazon QuickSight](https://aws.amazon.com/quicksight/) is one of Cloud services provided by Amazon. I have experience in some of AWS services, but QuickSight is new for me. Working with it some time I found that QuickSight is simpler and more convenient for designing dashboards than Looker. But also I noticed some points related this BI tool:
+[Amazon QuickSight](https://aws.amazon.com/quicksight/) is one of Cloud services provided by Amazon. As I'm a certified AWS developer I'm good with most AWS services, but I haven't had experience with QuickSight. But after some hours working in QuickSight, I found out the tool is intuitively clear and simple to use.
+There are some points I'd wanted to share about this tool:
 - QuickSight works on a cloud only as Looker.
 - You need to have AWS Account.
-- In Standard Free tier, you cannot share Dashboards to external users out of AWS. Instead, you need share to IAM users.
-- Charts is not interactive, means, no cross-filtering when you click on element in the chart.
+- In Standard Free tier, you cannot share Dashboards with external users out of your Amazon account. Instead, you need to share it for IAM users.
 - You can add fiters (like control elements in Looker) and assigned it for individual object or all on the report sheet.
 - Also you can add filters to report level.
 - All objects are very editable and customized (including Header Name).
-- No flexibility to resize and moving objects by layout, the objecta are alignment automatically.
-- Objects cannot be covered and crossed one another as it works in Looker.
+- There are two modes to add and place elements in the dashboard grid: tiled (visuals snap to a grid layout), free-form (visuals can be placed anywhere).
 
 My example of dashboard designed in QuickSight.
 
