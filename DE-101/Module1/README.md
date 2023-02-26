@@ -6,7 +6,7 @@
 ## 1. Architecture of Data Analytics solution
 I pictured the schema of the Data Analytics solution using [draw.io](https://app.diagrams.net/).
 - Source layer - here is presented all data sources required for business to get insights, build reporting and analytics, and make decisions. It can be sources such as Operational systems (ERP, CRM etc.), databases (Oracle, PostgreSQL, MongoDB etc.), flat files (txt, CSV), spreadsheets (Excel files), and semi-structured data (XML, JSON, parquet etc.).
-- Source data is transferred to Staging Layer by ETL or directly to DWH or Data Lake by ELT.
+- The data is transferred from sources to Stage, DWH, or Data Lake by ETL/ELT.
 - Staging layer -usually serve for temporary storing data, the data transform and validate before uploading to persistent storage (DWH). In most modern architecrure this layer is optional.
 - Storage layer - persistance data storage called Data Warehouse, basically it's a relational database (on-premis or cloud). DWH is mostly used for structured data, like transactions. Also, DWH can includes or consists of Data Marts, which provided the data for certain business departments. Additionally, as you might know that data sources can be semi-structured or flat files, so for this needs is Data Lake. The Data Lake is usually cost-effective and fast-accessing storage for storing data in raw format.
 - Business layer - is for data represntation, visualization, data analytics, prediction and many more. On this Layer is placed different BI tools, ML and prediction systems, Reporting tools, data mining tools and others. All these tools have access to DWH, Data Marts, and Data Lakes to query data.
