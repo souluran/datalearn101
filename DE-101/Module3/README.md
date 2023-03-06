@@ -6,4 +6,4 @@ TBD
 <img src="https://github.com/souluran/datalearn101/blob/dev/DE-101/Module3/image/profit-sale-switcher_in-action.gif" width=70% height=70%>
 
 
-<img src="https://github.com/souluran/datalearn101/blob/dev/DE-101/Module3/image/top-items_in_action.gif" width=70% height=70%>
+<img src="https://github.com/souluran/datalearn101/blob/dev/DE-101/Module3/image/top-items_in_action.gif" width=50% height=50%>
