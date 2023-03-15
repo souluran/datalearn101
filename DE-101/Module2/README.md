@@ -130,7 +130,7 @@ I want to share some thoughts and notices about this tool:
 - When you apply control element on the report level then it will be duplicated on each pages. No simple way to control dashboard from one page.
 - Working with the map element you cannot do more contrast color of the highlighted sections on the map because your geographical labels will disappear.
 
-My example of dashboard designed in Googel Looker.
+My example of dashboard designed in Googel Looker using [dashboard_query](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/dashboard_query.sql).
 
 <img src="https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/image/looker/looker-dashboard.PNG" width=80% height=80%>
 
@@ -145,6 +145,6 @@ There are some points I'd wanted to share about this tool:
 - All objects are very editable and customized (including Header Name).
 - There are two modes to add and place elements in the dashboard grid: tiled (visuals snap to a grid layout), free-form (visuals can be placed anywhere).
 
-My example of dashboard designed in QuickSight.
+My example of dashboard designed in QuickSight using [dashboard_query](https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/dashboard_query.sql).
 
 <img src="https://github.com/souluran/datalearn101/blob/master/DE-101/Module2/image/quicksight/quicksight-dashboard.PNG" width=80% height=80%>
