@@ -5,8 +5,8 @@ For more details refer to [DataLearn DE-101 Module03](https://github.com/Data-Le
 
 Content:
 1. [Tableau Desktop](https://github.com/souluran/datalearn101/tree/dev/DE-101/Module3#1-tableau-desktop) \
-1.1. [Connection to Postgres](https://github.com/souluran/datalearn101/tree/dev/DE-101/Module3#1.1-setup-connection-to-postgres) \
-1.2. [Tableau Data Sources](https://github.com/souluran/datalearn101/tree/dev/DE-101/Module3#1.2-tableau-data-sources)
+1.1. [Connection to Postgres](https://github.com/souluran/datalearn101/tree/dev/DE-101/Module3#11-setup-connection-to-postgres) \
+1.2. [Tableau Data Sources](https://github.com/souluran/datalearn101/tree/dev/DE-101/Module3#12-tableau-data-sources)
 
 ## 1. Tableau Desktop
 ### 1.1. Setup connection to Postgres
