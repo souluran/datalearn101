@@ -3,6 +3,11 @@ For more details refer to [DataLearn DE-101 Module03](https://github.com/Data-Le
 
 `Tableau` `Power BI`
 
+Passed training courses:
+- [Tableau Essential Training](https://www.linkedin.com/learning/tableau-essential-training-14959992)
+- [Creating Interactive Tableau Dashboards](https://www.linkedin.com/learning/creating-interactive-tableau-dashboards/design-dashboards-in-tableau)
+- [Power BI Essential Training](https://www.linkedin.com/learning/power-bi-essential-training-2020)
+
 Content:
 1. [Tableau Desktop](https://github.com/souluran/datalearn101/tree/dev/DE-101/Module3#1-tableau-desktop) \
 1.1. [Connection to Postgres](https://github.com/souluran/datalearn101/tree/dev/DE-101/Module3#11-setup-connection-to-postgres) \
